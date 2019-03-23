@@ -1,0 +1,1 @@
+*/30 * * * * rm -f bounced_emails.json && perl -MSisimai -lE 'print Sisimai->dump(shift)' /home/bounce/Maildir/cur | jq . >> bounced_emails.json && python3 main.py >> crontab.log && rm -f /home/bounce/Maildir/cur/*
